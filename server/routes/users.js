@@ -51,15 +51,15 @@ router.put('/api/:user_id', (req, res) => {
 	User.findById(req.params.user_id, (err, user) => {
 		if(err) res.json(err)
 
-		// user.local.firstname = req.body.firstname
-		// user.local.lastname = req.body.lastname
-		// user.local.email = req.body.email
-		// user.local.rule = req.body.rule
+		user.local.firstname = req.body.firstname
+		user.local.lastname = req.body.lastname
+		user.local.email = req.body.email
+		user.local.rule = req.body.rule
 
-		user.local.firstname = "1"
-		user.local.lastname = "1"
-		user.local.email = "1"
-		user.local.rule = "2"
+		// user.local.firstname = "1"
+		// user.local.lastname = "1"
+		// user.local.email = "1"
+		// user.local.rule = "2"
 
 		user.save((err) => {
 			if(err) res.json(err)
